@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0d111c;
+  --surface: rgba(255, 255, 255, 0.04);
+  --foreground: #eef2ff;
+  --muted: #9ca3af;
+  --accent: #70e0b8;
+  --accent-strong: #2ce0c5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at 10% 20%, rgba(112, 224, 184, 0.08), transparent 26%),
+    radial-gradient(circle at 90% 10%, rgba(117, 133, 255, 0.08), transparent 24%),
+    linear-gradient(135deg, #0b1324, #0d111c 45%, #0c101a);
+  color: var(--foreground);
+  font-family: var(--font-sans), "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display), "Playfair Display", "Space Grotesk", serif;
+  letter-spacing: -0.01em;
+  color: var(--foreground);
+}
+
+h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+p {
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+a {
+  color: inherit;
+}
+
+.glass {
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(14px);
+}
+
+.divider {
+  background: linear-gradient(90deg, transparent, rgba(112, 224, 184, 0.85), transparent);
+  height: 1px;
+  width: 100%;
+}
