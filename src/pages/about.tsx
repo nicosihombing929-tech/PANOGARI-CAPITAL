@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { AnimatedCard, AnimatedContainer } from "@/components/AnimatedElements";
 
 const highlights = [
   "Family office-grade governance with quant and discretionary oversight",
@@ -68,17 +69,20 @@ export default function About() {
           <p className="max-w-4xl text-lg text-slate-200">
             Panogari Capital blends a professional trading desk, CVQuant signal stack, and wealth management services under a clear governance framework. We operate with measurable targets and transparent oversight to keep the AUM roadmap on track.
           </p>
-          <div className="flex flex-wrap gap-3 text-sm text-slate-200">
-            {highlights.map((item) => (
-              <span key={item} className="rounded-full bg-white/10 px-4 py-2">
-                {item}
-              </span>
-            ))}
-          </div>
+          <AnimatedContainer>
+            <div className="flex flex-wrap gap-3 text-sm text-slate-200">
+              {highlights.map((item, idx) => (
+                <AnimatedCard key={item} delay={idx * 0.05}>
+                  <span className="inline-block rounded-full bg-white/10 px-4 py-2">{item}</span>
+                </AnimatedCard>
+              ))}
+            </div>
+          </AnimatedContainer>
         </header>
 
         <main className="flex flex-col gap-10">
-          <section className="glass rounded-3xl p-8 sm:p-10">
+          <AnimatedContainer>
+            <section className="glass rounded-3xl p-8 sm:p-10">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
                 <p className="text-sm uppercase tracking-[0.28em] text-slate-300">Leadership</p>
@@ -88,47 +92,58 @@ export default function About() {
                 </p>
               </div>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {leadership.map((leader) => (
-                  <div key={leader.role} className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                    <p className="text-xs uppercase tracking-[0.22em] text-slate-400">{leader.role}</p>
-                    <p className="mt-2 text-lg font-semibold text-emerald-100">{leader.name}</p>
-                    <p className="mt-3 text-sm text-slate-200">{leader.focus}</p>
-                  </div>
+                {leadership.map((leader, idx) => (
+                  <AnimatedCard key={leader.role} delay={idx * 0.06}>
+                    <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                      <p className="text-xs uppercase tracking-[0.22em] text-slate-400">{leader.role}</p>
+                      <p className="mt-2 text-lg font-semibold text-emerald-100">{leader.name}</p>
+                      <p className="mt-3 text-sm text-slate-200">{leader.focus}</p>
+                    </div>
+                  </AnimatedCard>
                 ))}
               </div>
             </div>
-          </section>
+            </section>
+          </AnimatedContainer>
 
-          <section className="grid gap-6 lg:grid-cols-3">
-            {pillars.map((pillar) => (
-              <div key={pillar.title} className="glass h-full rounded-3xl p-8">
-                <p className="text-sm font-semibold text-emerald-100">{pillar.title}</p>
-                <ul className="mt-4 space-y-3 text-sm text-slate-200">
-                  {pillar.items.map((item) => (
-                    <li key={item} className="flex gap-2">
-                      <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-300" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </section>
-
-          <section className="glass rounded-3xl p-8 sm:p-10">
-            <p className="text-sm uppercase tracking-[0.28em] text-slate-300">Operating cadence</p>
-            <h2 className="mt-2 text-2xl font-semibold">Feedback loops that keep us on target</h2>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {["Signal intake", "Pre-trade risk", "Execution quality", "Performance review"].map((item) => (
-                <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-5 text-sm font-semibold text-emerald-100">
-                  {item}
-                </div>
+          <AnimatedContainer>
+            <section className="grid gap-6 lg:grid-cols-3">
+              {pillars.map((pillar, idx) => (
+                <AnimatedCard key={pillar.title} delay={idx * 0.07}>
+                  <div className="h-full rounded-3xl p-2 sm:p-3 lg:p-4">
+                    <p className="text-sm font-semibold text-emerald-100">{pillar.title}</p>
+                    <ul className="mt-4 space-y-3 text-sm text-slate-200">
+                      {pillar.items.map((item) => (
+                        <li key={item} className="flex gap-2">
+                          <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-300" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </AnimatedCard>
               ))}
-            </div>
-            <p className="mt-4 text-sm text-slate-200">
-              Monthly reviews decide whether to continue the current playbooks, adjust trading parameters, or run model optimization—keeping us aligned to the Rp1B target and the scale plan beyond.
-            </p>
-          </section>
+            </section>
+          </AnimatedContainer>
+
+          <AnimatedContainer>
+            <section className="glass rounded-3xl p-8 sm:p-10">
+              <p className="text-sm uppercase tracking-[0.28em] text-slate-300">Operating cadence</p>
+              <h2 className="mt-2 text-2xl font-semibold">Feedback loops that keep us on target</h2>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {["Signal intake", "Pre-trade risk", "Execution quality", "Performance review"].map((item, idx) => (
+                  <AnimatedCard key={item} delay={idx * 0.05}>
+                    <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-sm font-semibold text-emerald-100">
+                      {item}
+                    </div>
+                  </AnimatedCard>
+                ))}
+              </div>
+              <p className="mt-4 text-sm text-slate-200">
+                Monthly reviews decide whether to continue the current playbooks, adjust trading parameters, or run model optimization—keeping us aligned to the Rp1B target and the scale plan beyond.
+              </p>
+            </section>
+          </AnimatedContainer>
         </main>
       </div>
     </>

@@ -1,4 +1,6 @@
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const repoName = "panogaricapitalfamilyoffice";
+const isProd = process.env.NODE_ENV === "production";
+const basePath = isProd ? `/${repoName}` : "";
 
 const nextConfig = {
   reactStrictMode: true,
@@ -10,7 +12,7 @@ const nextConfig = {
     unoptimized: true,
   },
   basePath,
-  assetPrefix: basePath ? `${basePath}/` : undefined,
+  assetPrefix: isProd ? `/${repoName}/` : undefined,
 };
 
 export default nextConfig;

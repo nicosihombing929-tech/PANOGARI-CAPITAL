@@ -66,9 +66,9 @@ const structurePhases = [
     marker: "1",
     title: "Panogari Capital — Family Office",
     subtitle: "Professional foundation with a long-term vision",
-    target: "Rp1 Billion AUM",
+    target: "Rp1 Billion AUM Target in 2026",
     cards: [
-      { title: "Chairman & CEO", desc: "Nico Panogari Sihombing" },
+      { title: "Chairman & CEO", desc: "NICO PANOGARI SIHOMBING" },
       { title: "Organization", desc: "Investment Management & Wealth Management" },
       { title: "Primary Focus", desc: "Stay focused on targets & governance" },
     ],
@@ -185,7 +185,7 @@ export default function Home() {
                 <div className="flex flex-wrap gap-3">
                   <a
                     className="rounded-full bg-gradient-to-r from-emerald-400 to-teal-300 px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-emerald-500/30 transition hover:scale-[1.01]"
-                    href="mailto:contact@panogaricapital.com"
+                    href="mailto:panogaricapital@gmail.com"
                   >
                     Schedule a conversation
                   </a>
@@ -223,7 +223,6 @@ export default function Home() {
 
           <div className="mx-auto max-w-6xl space-y-16 px-6 pb-12 sm:px-10 md:px-12 lg:px-14">
             <section className="relative pl-6 lg:pl-16">
-              <div className="absolute left-1 top-1 h-3 w-3 rounded-full bg-amber-400 shadow-[0_0_0_6px_rgba(212,162,79,0.12)] lg:left-[-0.9rem]" />
               <div className="mt-2 ml-3 lg:ml-8 space-y-2 border-y border-[#d4a34a]/45 py-6">
                 <AnimatedContainer>
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -234,7 +233,7 @@ export default function Home() {
                             <p className="text-[11px] uppercase tracking-[0.22em] text-slate-400">{metric.label}</p>
                             <p className="mt-1 text-base font-semibold text-emerald-100">{metric.value}</p>
                           </div>
-                          <span className="h-3 w-3 rounded-full bg-emerald-300/80" />
+                          <span className="h-10 w-[3px] rounded-full bg-gradient-to-b from-emerald-300/80 via-emerald-300 to-emerald-300/80" />
                         </div>
                       </AnimatedCard>
                     ))}
@@ -244,7 +243,6 @@ export default function Home() {
             </section>
 
             <section className="relative pl-6 lg:pl-16">
-              <div className="absolute left-1 top-1 h-3 w-3 rounded-full bg-amber-400 shadow-[0_0_0_6px_rgba(212,162,79,0.12)] lg:left-[-0.9rem]" />
               <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr]">
                 <div className="space-y-6">
                   <div className="flex items-center gap-3">
@@ -298,7 +296,6 @@ export default function Home() {
             </section>
 
             <section className="relative pl-6 lg:pl-16">
-              <div className="absolute left-1 top-1 h-3 w-3 rounded-full bg-amber-400 shadow-[0_0_0_6px_rgba(212,162,79,0.12)] lg:left-[-0.9rem]" />
               <AnimatedContainer>
                 <div className="mt-2 ml-3 lg:ml-8 grid gap-10 lg:grid-cols-3">
                   {pillars.map((pillar, idx) => (
@@ -322,12 +319,11 @@ export default function Home() {
             </section>
 
             <section className="relative pl-6 lg:pl-16">
-              <div className="absolute left-1 top-1 h-3 w-3 rounded-full bg-amber-400 shadow-[0_0_0_6px_rgba(212,162,79,0.12)] lg:left-[-0.9rem]" />
               <AnimatedContainer>
                 <div className="ml-3 lg:ml-8 relative pb-4">
                   <div className="flex flex-wrap items-center gap-3 pb-6">
                     <span className="rounded-full border border-[#d4a34a]/60 bg-[#d4a34a]/15 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-amber-100">Panogari Capital Structure</span>
-                    <p className="text-sm text-slate-300">Professional flowchart: decisions → execution → oversight</p>
+                    <p className="text-sm text-slate-300">Decisions → execution → oversight</p>
                   </div>
 
                   <div className="absolute left-1/2 top-6 hidden h-[88%] w-px -translate-x-1/2 bg-gradient-to-b from-[#d4a34a] via-emerald-300/50 to-[#d4a34a] lg:block" />
@@ -416,7 +412,6 @@ export default function Home() {
             </section>
 
             <section className="relative pl-6 lg:pl-16">
-              <div className="absolute left-1 top-1 h-3 w-3 rounded-full bg-amber-400 shadow-[0_0_0_6px_rgba(212,162,79,0.12)] lg:left-[-0.9rem]" />
               <AnimatedContainer>
                 <div className="rounded-3xl border border-white/5 bg-slate-900/60 p-8 sm:p-10">
                   <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
@@ -437,13 +432,13 @@ export default function Home() {
                     <div className="flex flex-col gap-3">
                       <a
                         className="rounded-full bg-gradient-to-r from-emerald-400 to-teal-300 px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-emerald-500/30 transition hover:scale-[1.01]"
-                        href="mailto:contact@panogaricapital.com"
+                        href="mailto:panogaricapital@gmail.com"
                       >
                         Contact Panogari Capital
                       </a>
                       <a
                         className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-emerald-300/70 hover:text-emerald-100"
-                        href="mailto:contact@panogaricapital.com?subject=Governance%20Overview%20Request"
+                        href="mailto:panogaricapital@gmail.com?subject=Governance%20Overview%20Request"
                       >
                         Request governance overview
                       </a>

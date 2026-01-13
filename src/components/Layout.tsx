@@ -70,10 +70,13 @@ export function Layout({ children }: { children: ReactNode }) {
           <div className="flex flex-wrap gap-3 text-sm">
             <a
               className="rounded-full border border-white/15 px-4 py-2 text-slate-100 transition hover:border-emerald-300/70 hover:text-emerald-100"
-              href="mailto:contact@panogaricapital.com"
+              href="mailto:panogaricapital@gmail.com"
             >
-              contact@panogaricapital.com
+              panogaricapital@gmail.com
             </a>
+            <span className="rounded-full border border-white/15 px-4 py-2 text-slate-100">
+              +62 851-2605-4805
+            </span>
             <Link
               className="rounded-full border border-white/15 px-4 py-2 text-slate-100 transition hover:border-emerald-300/70 hover:text-emerald-100"
               href="/contact"

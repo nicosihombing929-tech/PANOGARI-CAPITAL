@@ -32,7 +32,7 @@ const RoadmapFuturistic: React.FC = () => {
         "Baseline governance: reporting, compliance-ready documentation",
       ],
       tech: ["Docker", "Kubernetes", "Python 3.11", "FastAPI"],
-      timeline: "Q1 2025",
+      timeline: "Q1 2026",
       gradient: "from-cyan-500 to-blue-600",
     },
     {
@@ -45,7 +45,7 @@ const RoadmapFuturistic: React.FC = () => {
         "Achieve Panogari Capital operational at RP1B AUM",
       ],
       tech: ["Redis", "WebSockets", "React", "TypeScript"],
-      timeline: "Q2-Q3 2025",
+      timeline: "Q2-Q3 2026",
       gradient: "from-purple-500 to-pink-600",
     },
     {
@@ -58,14 +58,14 @@ const RoadmapFuturistic: React.FC = () => {
         "Stress testing, liquidity drills, and risk capital allocation",
       ],
       tech: ["TensorFlow", "Ray", "PostgreSQL", "AWS"],
-      timeline: "Q4 2025 - 2026",
+      timeline: "Q4 2026 - 2027",
       gradient: "from-orange-500 to-red-600",
     },
   ];
 
   const stats = [
-    { value: "RP1B", label: "Initial AUM Target", change: "+0%" },
-    { value: "RP10B", label: "Scale Target", change: "+900%" },
+    { value: "RP1B", label: "Initial AUM Target in 2026", change: "+0%" },
+    { value: "RP10B", label: "Scale Target in 2027", change: "+900%" },
     { value: "24/7", label: "Trading Operations", change: "Real-time" },
     { value: "99.9%", label: "System Uptime", change: "Target" },
   ];

@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+// GitHub Pages: set basePath/assetPrefix when in production
+const repoName = "panogaricapitalfamilyoffice";
+const isProd = process.env.NODE_ENV === "production";
+const basePath = isProd ? `/${repoName}` : "";
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
@@ -13,7 +16,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   basePath,
-  assetPrefix: basePath ? `${basePath}/` : undefined,
+  assetPrefix: isProd ? `/${repoName}/` : undefined,
 };
 
 export default nextConfig;

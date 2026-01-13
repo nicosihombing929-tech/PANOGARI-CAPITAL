@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { AnimatedCard, AnimatedContainer } from "@/components/AnimatedElements";
 
 const wealthServices = [
   "Holistic financial planning aligned to family objectives",
@@ -41,7 +42,8 @@ export default function Services() {
         </header>
 
         <main className="flex flex-col gap-10">
-          <section className="glass rounded-3xl p-8 sm:p-10">
+          <AnimatedContainer>
+            <section className="glass rounded-3xl p-8 sm:p-10">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
                 <p className="text-sm uppercase tracking-[0.28em] text-slate-300">Wealth Management</p>
@@ -51,17 +53,21 @@ export default function Services() {
                 </p>
               </div>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-2">
-                {wealthServices.map((item) => (
-                  <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-5 text-sm text-slate-200">
-                    <span className="mr-2 inline-block h-2 w-2 rounded-full bg-emerald-300" />
-                    {item}
-                  </div>
+                {wealthServices.map((item, idx) => (
+                  <AnimatedCard key={item} delay={idx * 0.05}>
+                    <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-sm text-slate-200">
+                      <span className="mr-2 inline-block h-2 w-2 rounded-full bg-emerald-300" />
+                      {item}
+                    </div>
+                  </AnimatedCard>
                 ))}
               </div>
             </div>
-          </section>
+            </section>
+          </AnimatedContainer>
 
-          <section className="glass rounded-3xl p-8 sm:p-10">
+          <AnimatedContainer>
+            <section className="glass rounded-3xl p-8 sm:p-10">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
                 <p className="text-sm uppercase tracking-[0.28em] text-slate-300">Investment Management</p>
@@ -71,17 +77,21 @@ export default function Services() {
                 </p>
               </div>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-2">
-                {investmentServices.map((item) => (
-                  <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-5 text-sm text-slate-200">
-                    <span className="mr-2 inline-block h-2 w-2 rounded-full bg-emerald-300" />
-                    {item}
-                  </div>
+                {investmentServices.map((item, idx) => (
+                  <AnimatedCard key={item} delay={idx * 0.05}>
+                    <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-sm text-slate-200">
+                      <span className="mr-2 inline-block h-2 w-2 rounded-full bg-emerald-300" />
+                      {item}
+                    </div>
+                  </AnimatedCard>
                 ))}
               </div>
             </div>
-          </section>
+            </section>
+          </AnimatedContainer>
 
-          <section className="glass rounded-3xl p-8 sm:p-10">
+          <AnimatedContainer>
+            <section className="glass rounded-3xl p-8 sm:p-10">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
                 <p className="text-sm uppercase tracking-[0.28em] text-slate-300">Active Trading Desk</p>
@@ -91,15 +101,18 @@ export default function Services() {
                 </p>
               </div>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-2">
-                {tradingDesk.map((item) => (
-                  <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-5 text-sm text-slate-200">
-                    <span className="mr-2 inline-block h-2 w-2 rounded-full bg-emerald-300" />
-                    {item}
-                  </div>
+                {tradingDesk.map((item, idx) => (
+                  <AnimatedCard key={item} delay={idx * 0.05}>
+                    <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-sm text-slate-200">
+                      <span className="mr-2 inline-block h-2 w-2 rounded-full bg-emerald-300" />
+                      {item}
+                    </div>
+                  </AnimatedCard>
                 ))}
               </div>
             </div>
-          </section>
+            </section>
+          </AnimatedContainer>
         </main>
       </div>
     </>

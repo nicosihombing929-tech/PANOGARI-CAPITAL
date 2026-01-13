@@ -92,8 +92,8 @@ const Roadmap: React.FC = () => {
   ];
 
   const stats = [
-    { label: "Target AUM", value: "RP1B", subvalue: "Initial Target", icon: <Target /> },
-    { label: "Next Phase", value: "RP10B", subvalue: "Scale Target", icon: <TrendingUp /> },
+    { label: "Target AUM", value: "RP1B", subvalue: "Initial Target in 2026", icon: <Target /> },
+    { label: "Next Phase", value: "RP10B", subvalue: "Scale Target in 2027", icon: <TrendingUp /> },
     { label: "Automation", value: "95%", subvalue: "CVQuant System", icon: <Zap /> },
     { label: "Coverage", value: "360°", subvalue: "Risk Management", icon: <Shield /> },
   ];
@@ -151,7 +151,7 @@ const Roadmap: React.FC = () => {
 
                 <div className={`w-full md:w-1/2 ${index % 2 === 0 ? "md:text-right md:pr-16" : "md:pl-16"}`}>
                   <div
-                    className={`${phase.gradient} backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 transform transition-all duration-300 hover:scale-[1.02] hover:border-gray-600/50`}
+                    className={`${phase.gradient} backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 md:p-8 transform transition-all duration-300 hover:scale-[1.02] hover:border-gray-600/50`}
                   >
                     <div className="flex items-center justify-between mb-6">
                       <div className={`p-3 rounded-xl bg-gradient-to-br ${phase.color}`}>{phase.icon}</div>
@@ -200,7 +200,7 @@ const Roadmap: React.FC = () => {
                 </div>
 
                 <div
-                  className={`absolute ${index % 2 === 0 ? "md:right-1/2 md:translate-x-16" : "md:left-1/2 md:-translate-x-16"} text-8xl font-bold text-gray-800/30 -z-10`}
+                  className={`absolute ${index % 2 === 0 ? "md:right-1/2 md:translate-x-16" : "md:left-1/2 md:-translate-x-16"} hidden md:block text-8xl font-bold text-gray-800/30 -z-10`}
                 >
                   0{phase.id}
                 </div>
