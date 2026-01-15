@@ -75,11 +75,11 @@ export function Layout({ children }: { children: ReactNode }) {
 
         {/* Mobile Menu Overlay */}
         <div
-          className={`fixed inset-0 z-40 flex flex-col bg-slate-950/98 pt-24 backdrop-blur-xl transition-all duration-300 md:hidden ${
+          className={`fixed inset-0 z-40 flex flex-col bg-black/95 pt-28 backdrop-blur-3xl transition-all duration-300 md:hidden ${
             isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
           }`}
         >
-          <nav className="flex w-full flex-col gap-1 px-4">
+          <nav className="flex w-full flex-col gap-2 px-6">
              {navItems.map((item) => {
                const active = isActive(router.pathname, item.href);
                return (
@@ -87,29 +87,29 @@ export function Layout({ children }: { children: ReactNode }) {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`flex w-full items-center justify-between rounded-lg px-5 py-4 text-base font-medium transition-colors ${
+                  className={`flex w-full items-center justify-between border-b border-white/5 pb-4 pt-2 text-lg font-medium transition-colors ${
                     active 
-                      ? "bg-white/5 text-emerald-400" 
-                      : "text-slate-300 hover:bg-white/5 hover:text-white"
+                      ? "text-emerald-400" 
+                      : "text-slate-100 hover:text-emerald-300"
                   }`}
                 >
                   <span>{item.label}</span>
-                  <svg className={`h-4 w-4 transition-transform ${active ? "rotate-0 text-emerald-400" : "-rotate-90 text-slate-600"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+                  {active && (
+                    <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
+                  )}
                 </Link>
                );
              })}
              
-             <div className="my-2 h-px w-full bg-white/5" />
-
-             <Link
-               href="/roadmap"
-               onClick={() => setIsMobileMenuOpen(false)}
-               className="flex w-full items-center justify-center rounded-lg bg-emerald-600 px-5 py-3.5 text-sm font-bold uppercase tracking-widest text-white shadow-lg shadow-emerald-900/20 active:scale-[0.98]"
-             >
-               View Roadmap
-             </Link>
+             <div className="mt-8">
+               <Link
+                 href="/roadmap"
+                 onClick={() => setIsMobileMenuOpen(false)}
+                 className="flex w-full items-center justify-center rounded-full bg-gradient-to-r from-emerald-600 to-teal-500 px-5 py-4 text-sm font-bold uppercase tracking-widest text-white shadow-lg shadow-emerald-500/20 transition-transform active:scale-[0.98]"
+               >
+                 View Roadmap
+               </Link>
+             </div>
           </nav>
         </div>
       </div>
