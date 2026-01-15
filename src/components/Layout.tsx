@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -16,24 +16,29 @@ function isActive(pathname: string, href: string) {
 
 export function Layout({ children }: { children: ReactNode }) {
   const router = useRouter();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[linear-gradient(90deg,#000000,#737373)] text-slate-100">
-      <div className="fixed inset-x-0 top-0 z-30 border-b border-white/10 bg-black/40 backdrop-blur-xl">
+      <div className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/40 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3 sm:px-10">
           <Link
             href="/"
-            className="flex items-center gap-2 text-sm font-semibold tracking-[0.24em] text-emerald-100"
+            className="flex items-center gap-2 text-sm font-semibold tracking-[0.24em] text-emerald-100 z-50 relative"
+            onClick={() => setIsMobileMenuOpen(false)}
           >
             <img
               src="/logo.png"
               alt="Panogari Capital"
-              className="h-7 w-auto" /* ~28px height, 8px gap via gap-2 */
+              className="h-7 w-auto"
               loading="lazy"
             />
-            <span>PANOGARI CAPITAL</span>
+            <span className="hidden xs:block">PANOGARI CAPITAL</span>
+            <span className="block xs:hidden">PANOGARI CAPITAL</span>
           </Link>
-          <div className="flex items-center gap-1 sm:gap-2">
+          
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center gap-1 sm:gap-2">
             {navItems.map((item) => {
               const active = isActive(router.pathname, item.href);
               return (
@@ -54,6 +59,49 @@ export function Layout({ children }: { children: ReactNode }) {
             >
               Roadmap
             </Link>
+          </div>
+
+          {/* Mobile Hamburger */}
+          <button
+            className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span className={`h-0.5 w-6 bg-emerald-100 transition-all duration-300 ${isMobileMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
+            <span className={`h-0.5 w-6 bg-emerald-100 transition-all duration-300 ${isMobileMenuOpen ? "opacity-0" : ""}`} />
+            <span className={`h-0.5 w-6 bg-emerald-100 transition-all duration-300 ${isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+          </button>
+        </div>
+
+        {/* Mobile Menu Overlay */}
+        <div
+          className={`fixed inset-0 z-40 flex flex-col items-center justify-center bg-black/95 backdrop-blur-3xl transition-all duration-500 md:hidden ${
+            isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+          }`}
+        >
+          <div className="flex flex-col items-center gap-8">
+             {navItems.map((item) => {
+               const active = isActive(router.pathname, item.href);
+               return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`text-2xl font-light tracking-widest transition-all ${
+                    active ? "text-emerald-400 font-normal scale-110" : "text-slate-300 hover:text-white"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+               );
+             })}
+             <Link
+               href="/roadmap"
+               onClick={() => setIsMobileMenuOpen(false)}
+               className="mt-4 rounded-full bg-emerald-500 px-8 py-3 text-sm font-bold tracking-widest text-black shadow-xl shadow-emerald-500/20"
+             >
+               ROADMAP
+             </Link>
           </div>
         </div>
       </div>

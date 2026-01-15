@@ -70,7 +70,7 @@ a {
 }
 
 .glass {
-  background: var(--surface);
+  background: linear-gradient(90deg, #000000, #16145a);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(14px);

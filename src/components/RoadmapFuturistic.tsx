@@ -91,7 +91,7 @@ const RoadmapFuturistic: React.FC = () => {
                   </div>
                 </div>
                 <div>
-                  <h1 className="text-5xl lg:text-6xl font-bold tracking-tight">
+                  <h1 className="text-3xl sm:text-4xl xs:text-5xl lg:text-6xl font-bold tracking-tight">
                     <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">PANOGARI</span>
                     <span className="text-white"> CAPITAL</span>
                   </h1>
@@ -132,7 +132,7 @@ const RoadmapFuturistic: React.FC = () => {
 
         <main className="container mx-auto px-4 pb-20">
           <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5">
+            <div className="absolute left-4 lg:left-1/2 transform -translate-x-1/2 h-full w-0.5">
               <div className="h-full bg-gradient-to-b from-cyan-500 via-purple-500 to-orange-500 opacity-30" />
               <div className="absolute inset-0 bg-gradient-to-b from-cyan-500 via-purple-500 to-orange-500 opacity-20 blur-lg" />
             </div>
@@ -143,9 +143,9 @@ const RoadmapFuturistic: React.FC = () => {
                 initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: idx * 0.2 }}
-                className={`relative flex flex-col lg:flex-row items-center mb-32 ${idx % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}
+                className={`relative flex flex-col lg:flex-row items-start lg:items-center mb-16 lg:mb-32 ${idx % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}
               >
-                <div className={`w-full lg:w-1/2 ${idx % 2 === 0 ? "lg:pr-16" : "lg:pl-16"}`}>
+                <div className={`w-full lg:w-1/2 pl-12 lg:pl-0 ${idx % 2 === 0 ? "lg:pr-16" : "lg:pl-16"}`}>
                   <motion.div whileHover={{ scale: 1.02 }} className="relative p-0">
                     <div className="relative py-4">
                       <div className="flex items-center justify-between mb-6">

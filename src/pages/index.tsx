@@ -160,57 +160,73 @@ export default function Home() {
         />
       </Head>
 
-      <div className="min-h-screen bg-[linear-gradient(90deg,#000000,#737373)] text-slate-100">
-        <section className="relative isolate w-full overflow-hidden bg-transparent py-12 sm:py-14 lg:py-16">
-          <AnimatedHeroOrb />
-          <AnimatedFinancialBackground />
-          <div className="relative mx-auto max-w-6xl px-6 sm:px-10 md:px-12 lg:px-14">
-            <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-              <div className="flex flex-col gap-4 pt-6 sm:pt-8">
-                <div className="space-y-2">
-                  <h1 className="text-4xl font-semibold leading-none sm:text-5xl">
-                    <span className="font-serif">PANOGARI</span>
-                    <span className="ml-3 font-sans text-[0.95em] tracking-[0.14em] font-normal">CAPITAL</span>
+      <div className="min-h-screen bg-[linear-gradient(90deg,#000000,#737373)] text-slate-100 selection:bg-amber-500/30">
+        <section className="relative isolate w-full overflow-hidden py-16 lg:py-28">
+          
+          <div className="relative mx-auto max-w-7xl px-6 sm:px-10 md:px-12 lg:px-14">
+            <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+              <div className="flex flex-col gap-8">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="h-px w-12 bg-amber-500/60"></div>
+                     <span className="text-sm font-semibold tracking-[0.2em] text-amber-500 uppercase">Est. 2026 Strategy</span>
+                  </div>
+                  
+                  <h1 className="text-4xl xs:text-5xl font-bold leading-[0.95] tracking-tight text-white md:text-7xl lg:text-[5.5rem]">
+                    <span className="block font-serif font-medium italic text-slate-200 lg:text-[6.5rem] tracking-wide text-5xl sm:text-7xl">Panogari</span>
+                    <span className="block mt-2 tracking-[0.15em] sm:tracking-[0.3em] font-sans font-light text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 text-3xl xs:text-4xl sm:text-5xl lg:text-[5.5rem] break-words">
+                      CAPITAL
+                    </span>
                   </h1>
                 </div>
-                <p className="text-lg font-semibold uppercase tracking-[0.28em] text-slate-200 sm:text-xl">
-                  Family Office
-                </p>
-                <p className="text-xl font-medium text-slate-100 sm:text-2xl">
-                  A professional family office with an active trading edge
-                </p>
-                <p className="max-w-3xl text-lg text-slate-200">
-                  We combine an institutional-grade trading desk with CVQuant System to pursue the Rp1B AUM target in 2026, while keeping governance, risk, and reporting transparent for family stakeholders.
-                </p>
-                <div className="flex flex-wrap gap-3">
+                
+                <div className="max-w-2xl space-y-6">
+                   <h2 className="text-2xl font-light text-slate-100 leading-snug font-serif italic">
+                     Family Office 
+                   </h2>
+                   <div className="h-px w-full bg-gradient-to-r from-white/20 to-transparent"></div>
+                   <p className="text-xl text-slate-200 leading-relaxed font-light">
+                    Institutional-grade trading infrastructure dedicated to <span className="font-medium text-white">wealth preservation</span> and <span className="font-medium text-white">systematic growth</span>.
+                   </p>
+                   <p className="text-base text-slate-400 leading-relaxed max-w-lg">
+                    By combining our proprietary <strong>CVQuant System</strong> with seasoned discretionary oversight, we pursue a disciplined Rp1B AUM target for 2026—prioritizing transparency and governance above all.
+                   </p>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 pt-4">
                   <a
-                    className="rounded-full bg-gradient-to-r from-emerald-400 to-teal-300 px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-emerald-500/30 transition hover:scale-[1.01]"
+                    className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-sm bg-[linear-gradient(90deg,#000000,#16145a)] px-8 py-4 text-sm font-bold tracking-wider text-white transition-all hover:opacity-90 shadow-[0_0_20px_rgba(53,51,205,0.3)]"
                     href="mailto:panogaricapital@gmail.com"
                   >
-                    Schedule a conversation
+                    <span>START CONVERSATION</span>
+                    <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                   </a>
-                  <a
-                    className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-emerald-300/70 hover:text-emerald-100"
-                    href="/roadmap"
-                  >
-                    View roadmap
-                  </a>
-                  <Link
-                    className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-emerald-300/70 hover:text-emerald-100"
-                    href="/services"
-                  >
-                    Services
-                  </Link>
+                  
+                  <div className="flex flex-wrap gap-4">
+                      <a
+                        className="group inline-flex items-center justify-center px-6 py-4 text-sm font-semibold tracking-wide text-white transition-colors hover:text-amber-400"
+                        href="/roadmap"
+                      >
+                        <span className="border-b border-transparent pb-0.5 transition-colors group-hover:border-amber-400">View Roadmap</span>
+                      </a>
+                      <Link
+                        className="group inline-flex items-center justify-center px-6 py-4 text-sm font-semibold tracking-wide text-white transition-colors hover:text-amber-400"
+                        href="/services"
+                      >
+                         <span className="border-b border-transparent pb-0.5 transition-colors group-hover:border-amber-400">Services</span>
+                      </Link>
+                   </div>
                 </div>
               </div>
 
-              <div className="flex items-center justify-center lg:justify-start lg:self-center lg:-ml-6">
-                <img
-                  src="/logo.png"
-                  alt="Panogari Capital logo"
-                  className="h-[32rem] w-auto max-w-none drop-shadow-[0_14px_60px_rgba(16,185,129,0.38)] sm:h-[36rem] md:h-[40rem]"
-                  loading="lazy"
-                />
+              <div className="relative hidden lg:block">
+                 <div className="relative flex justify-end">
+                    <img
+                    src="/logo.png"
+                    alt="Panogari Capital logo"
+                    className="relative z-10 w-full max-w-lg drop-shadow-2xl grayscale transition-all duration-700 hover:grayscale-0 hover:scale-[1.02]"
+                    />
+                 </div>
               </div>
             </div>
           </div>
@@ -218,159 +234,224 @@ export default function Home() {
 
         <div className="relative">
           <div className="pointer-events-none absolute inset-y-0 left-6 hidden lg:block">
-            <div className="h-full w-[2px] bg-gradient-to-b from-slate-900 via-amber-500/30 to-slate-900 opacity-80" />
+            <div className="h-full w-[2px] bg-gradient-to-b from-slate-900 via-amber-500/10 to-slate-900 opacity-80" />
           </div>
 
           <div className="mx-auto max-w-6xl space-y-16 px-6 pb-12 sm:px-10 md:px-12 lg:px-14">
             <section className="relative pl-6 lg:pl-16">
-              <div className="mt-2 ml-3 lg:ml-8 space-y-2 border-y border-[#d4a34a]/45 py-6">
-                <AnimatedContainer>
+              <div className="mt-2 ml-3 lg:ml-8 space-y-2 py-6">
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     {metrics.map((metric, idx) => (
                       <AnimatedCard key={metric.label} delay={idx * 0.05}>
-                        <div className="flex items-center justify-between rounded-lg px-2 py-1 text-sm text-slate-200">
-                          <div>
-                            <p className="text-[11px] uppercase tracking-[0.22em] text-slate-400">{metric.label}</p>
-                            <p className="mt-1 text-base font-semibold text-emerald-100">{metric.value}</p>
+                         <div className="group relative overflow-hidden rounded-2xl border border-white/5 bg-white/5 p-5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/30 hover:bg-white/10 hover:shadow-lg hover:shadow-emerald-500/10">
+                            <div className="absolute -right-4 -top-4 h-16 w-16 rounded-full bg-emerald-900/5 blur-xl transition-all duration-500 group-hover:bg-emerald-500/20" />
+                            <p className="relative z-10 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 group-hover:text-emerald-300 transition-colors">
+                              {metric.label}
+                            </p>
+                            <p className="relative z-10 mt-1 text-2xl font-bold text-white group-hover:text-emerald-50 transition-colors">
+                              {metric.value}
+                            </p>
+                            <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-gradient-to-r from-emerald-500 to-transparent transition-all duration-300 group-hover:w-full" />
+                         </div>
+                      </AnimatedCard>
+                    ))}
+                  </div>
+              </div>
+            </section>
+
+            <section className="relative pl-6 lg:pl-16">
+              <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] items-start">
+                
+                {/* CVQuant Strategy Section */}
+                <div className="space-y-8">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500/20 to-teal-500/10 border border-emerald-500/30 text-2xl font-bold text-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+                      CV
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2">
+                         <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+                         <p className="text-xs font-bold uppercase tracking-[0.3em] text-emerald-500/80">CVQuant System v2.0</p>
+                      </div>
+                      <h3 className="text-3xl font-bold text-white mt-1">Signal-First Execution</h3>
+                    </div>
+                  </div>
+                  
+                  <div className="grid gap-5 sm:grid-cols-2">
+                      {strategy.map((item, idx) => (
+                        <AnimatedCard key={item.title} delay={idx * 0.06}>
+                          <div className="group h-full rounded-xl border border-white/5 bg-[linear-gradient(90deg,#000000,#78560e)] p-5 transition-all hover:border-emerald-500/40 hover:bg-slate-800/60">
+                            <div className="mb-3 flex items-center justify-between">
+                              <p className="font-mono text-sm font-bold text-emerald-300 group-hover:text-emerald-200">{item.title}</p>
+                              <span className="rounded bg-white/5 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-slate-500">Module 0{idx + 1}</span>
+                            </div>
+                            <p className="text-sm leading-relaxed text-slate-400 group-hover:text-slate-300">{item.detail}</p>
                           </div>
-                          <span className="h-10 w-[3px] rounded-full bg-gradient-to-b from-emerald-300/80 via-emerald-300 to-emerald-300/80" />
+                        </AnimatedCard>
+                      ))}
+                  </div>
+                </div>
+
+                {/* Governance Section */}
+                <div className="ml-3 lg:ml-8 relative">
+                   {/* Background Decor */}
+                   <div className="absolute -right-10 -top-10 h-64 w-64 rounded-full bg-amber-900/5 blur-3xl pointer-events-none" />
+                   
+                   <div className="relative rounded-2xl border border-amber-500/20 bg-[linear-gradient(90deg,#000000,#78560e)] p-8 shadow-2xl backdrop-blur-xl">
+                      <div className="mb-6 border-b border-white/10 pb-6">
+                        <p className="text-xs font-bold uppercase tracking-[0.3em] text-amber-500">Risk Framework</p>
+                        <h3 className="mt-2 text-2xl font-bold text-white">Governance & Oversight</h3>
+                      </div>
+                      
+                      <ul className="space-y-5">
+                        {governance.map((item, idx) => (
+                          <li key={idx} className="group flex items-start gap-4">
+                            <div className="mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-amber-500/10 text-amber-500 group-hover:bg-amber-500 group-hover:text-black transition-colors">
+                               <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                               </svg>
+                            </div>
+                            <span className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      <div className="mt-8 pt-6 border-t border-white/10">
+                        <Link
+                            className="group inline-flex items-center gap-2 text-sm font-semibold text-emerald-400 transition-colors hover:text-emerald-300"
+                            href="/about"
+                        >
+                            <span className="border-b border-emerald-400/30 pb-0.5 group-hover:border-emerald-400">Read Governance Protocol</span>
+                            <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
+                        </Link>
+                      </div>
+                   </div>
+                </div>
+              </div>
+            </section>
+
+            <section className="relative pl-6 lg:pl-16">
+               <div className="mt-8 ml-3 lg:ml-8">
+                  <div className="mb-8">
+                      <h3 className="text-2xl font-bold text-white">Core Pillars</h3>
+                      <div className="mt-2 h-1 w-20 rounded-full bg-gradient-to-r from-emerald-500 to-transparent"></div>
+                  </div>
+                  <div className="grid gap-6 lg:grid-cols-3">
+                    {pillars.map((pillar, idx) => (
+                      <AnimatedCard key={pillar.title} delay={idx * 0.07}>
+                        <div className="group h-full space-y-4 p-1 transition-all duration-300">
+                          <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-900/5 text-emerald-400 group-hover:scale-110 transition-transform duration-300">
+                             <div className="h-6 w-6 rounded-sm border-2 border-emerald-400/50" />
+                          </div>
+                          <h4 className="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors">{pillar.title}</h4>
+                          {pillar.subtitle && <p className="text-sm italic text-slate-300">{pillar.subtitle}</p>}
+                          <ul className="space-y-3 text-sm text-slate-200">
+                            {pillar.points.map((point) => (
+                              <li key={point} className="flex items-start gap-3">
+                                <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
+                                <span className="group-hover:text-white transition-colors">{point}</span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                       </AnimatedCard>
                     ))}
                   </div>
-                </AnimatedContainer>
-              </div>
+               </div>
             </section>
 
             <section className="relative pl-6 lg:pl-16">
-              <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr]">
-                <div className="space-y-6">
-                  <div className="flex items-center gap-3">
-                    <span className="h-10 w-10 rounded-2xl bg-emerald-300/15 text-center text-lg font-semibold text-emerald-200">CV</span>
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.3em] text-slate-300">CVQuant System</p>
-                      <h3 className="text-2xl font-semibold">Signal-first execution</h3>
+              <div className="ml-3 lg:ml-8 relative pb-20">
+                  {/* Modern Header for Capital Structure */}
+                  <div className="relative mb-20 pt-10">
+                    <div className="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-emerald-900/5 blur-[60px]" />
+                    <h2 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
+                      <span className="bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
+                        PANOGARI CAPITAL
+                      </span>
+                      <br />
+                      <span className="font-serif italic text-emerald-400">Structure</span>
+                    </h2>
+                    <div className="mt-6 flex items-center gap-4">
+                      <div className="h-[2px] w-12 bg-gradient-to-r from-emerald-500 to-transparent" />
+                      <p className="font-mono text-xs uppercase tracking-widest text-emerald-500/80">
+                        System Architecture & Roadmap
+                      </p>
                     </div>
                   </div>
-                  <AnimatedContainer>
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      {strategy.map((item, idx) => (
-                        <AnimatedCard key={item.title} delay={idx * 0.06}>
-                          <div className="rounded-xl border-y border-[#d4a34a]/45 py-4">
-                            <div className="flex items-center justify-between gap-2">
-                              <p className="text-sm font-semibold text-emerald-100">{item.title}</p>
-                              <span className="text-[11px] uppercase tracking-[0.2em] text-slate-400">Focus</span>
-                            </div>
-                            <p className="mt-2 text-sm text-slate-200">{item.detail}</p>
-                          </div>
-                        </AnimatedCard>
-                      ))}
-                    </div>
-                  </AnimatedContainer>
-                </div>
 
-                <AnimatedContainer>
-                  <div className="space-y-4 border-y border-[#d4a34a]/45 py-6 ml-3 lg:ml-8">
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.3em] text-slate-300">Governance & Risk</p>
-                    <h3 className="mt-2 text-xl font-semibold">Real-time oversight</h3>
-                  </div>
-                  <ul className="space-y-3 text-sm text-slate-200">
-                    {governance.map((item) => (
-                      <li key={item} className="flex gap-2">
-                        <span className="mt-1 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-emerald-300" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-100 underline-offset-4 hover:underline"
-                    href="/about"
-                  >
-                    Governance approach
-                    <span aria-hidden>→</span>
-                  </Link>
-                  </div>
-                </AnimatedContainer>
-              </div>
-            </section>
+                  {/* Central Spine for Desktop */}
+                  <div className="absolute left-[24px] lg:left-1/2 top-48 bottom-12 w-[3px] bg-gradient-to-b from-transparent via-emerald-500/20 to-transparent hidden lg:block" />
 
-            <section className="relative pl-6 lg:pl-16">
-              <AnimatedContainer>
-                <div className="mt-2 ml-3 lg:ml-8 grid gap-10 lg:grid-cols-3">
-                  {pillars.map((pillar, idx) => (
-                    <AnimatedCard key={pillar.title} delay={idx * 0.07}>
-                      <div className="space-y-3 border-y border-[#d4a34a]/45 py-5">
-                        <p className="text-sm font-semibold text-emerald-200">{pillar.title}</p>
-                        {pillar.subtitle && <p className="text-sm text-slate-300">{pillar.subtitle}</p>}
-                        <ul className="space-y-2 text-sm text-slate-200">
-                          {pillar.points.map((point) => (
-                            <li key={point} className="flex gap-2">
-                              <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-300" />
-                              <span>{point}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </AnimatedCard>
-                  ))}
-                </div>
-              </AnimatedContainer>
-            </section>
-
-            <section className="relative pl-6 lg:pl-16">
-              <AnimatedContainer>
-                <div className="ml-3 lg:ml-8 relative pb-4">
-                  <div className="flex flex-wrap items-center gap-3 pb-6">
-                    <span className="rounded-full border border-[#d4a34a]/60 bg-[#d4a34a]/15 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-amber-100">Panogari Capital Structure</span>
-                    <p className="text-sm text-slate-300">Decisions → execution → oversight</p>
-                  </div>
-
-                  <div className="absolute left-1/2 top-6 hidden h-[88%] w-px -translate-x-1/2 bg-gradient-to-b from-[#d4a34a] via-emerald-300/50 to-[#d4a34a] lg:block" />
-
-                  <div className="space-y-12 lg:space-y-16">
+                  <div className="relative space-y-24">
                     {structurePhases.map((phase, idx) => {
                       const isLeft = phase.align === "left";
                       return (
                         <AnimatedCard key={phase.marker} delay={idx * 0.08}>
-                          <div className={`relative flex flex-col gap-4 lg:grid lg:grid-cols-2 ${isLeft ? "lg:pr-10" : "lg:pl-10"}`}>
-                            <div className={`lg:col-span-1 ${isLeft ? "lg:pr-6 lg:justify-self-start" : "lg:order-2 lg:pl-6 lg:justify-self-end"}`}>
-                              <div className="flex items-center gap-3">
-                                <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#d4a34a] bg-black/50 text-lg font-bold text-amber-200 shadow-[0_0_0_8px_rgba(212,163,74,0.18)]">
-                                  {phase.marker}
-                                </div>
-                                <div>
-                                  <p className="text-xs uppercase tracking-[0.3em] text-slate-300">Phase {phase.marker}</p>
-                                  <h3 className="text-xl font-semibold text-emerald-100">{phase.title}</h3>
-                                </div>
+                          <div className={`relative flex flex-col gap-8 lg:grid lg:grid-cols-2 ${isLeft ? "lg:text-right" : "lg:text-left"}`}>
+                            
+                            {/* Central Node Marker (Desktop) */}
+                            <div className="absolute left-1/2 top-0 -translate-x-1/2 hidden lg:flex flex-col items-center justify-center">
+                              <div className="relative flex h-4 w-4 items-center justify-center">
+                                <span className="absolute inline-flex h-full w-full  rounded-full bg-emerald-400 opacity-20"></span>
+                                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.8)]"></span>
                               </div>
-                              <p className="mt-2 text-sm text-slate-200">{phase.subtitle}</p>
-                              {phase.target && (
-                                <div className="mt-4 rounded-2xl border border-[#d4a34a]/45 bg-black/20 px-4 py-3 text-sm font-semibold text-emerald-100 shadow-[0_8px_24px_rgba(0,0,0,0.35)]">
-                                  {phase.target}
-                                </div>
-                              )}
+                              
+                              {/* Vertical Phase Label */}
+                              <div className="absolute left-4 top-8 origin-top-left rotate-90">
+                                <span className="whitespace-nowrap font-mono text-[10px] font-bold tracking-[0.3em] text-emerald-500/50">
+                                  PHASE_0{phase.marker}
+                                </span>
+                              </div>
                             </div>
 
-                            <div className={`lg:col-span-1 ${isLeft ? "lg:pl-8" : "lg:order-1 lg:pr-8"}`}>
-                              <div className="rounded-2xl border border-[#d4a34a]/45 bg-black/25 p-5 shadow-[0_10px_32px_rgba(0,0,0,0.38)]">
-                                <div className="grid gap-3 sm:grid-cols-2">
-                                  {phase.cards.map((card) => (
-                                    <div key={card.title} className="rounded-xl border border-[#d4a34a]/35 bg-black/30 px-3 py-3 text-sm text-slate-100">
-                                      <p className="text-[13px] font-semibold text-emerald-100">{card.title}</p>
-                                      <p
-                                        className={`mt-1 text-xs ${card.title === "Chairman & CEO" ? "font-semibold text-emerald-100" : "text-slate-300"}`}
-                                      >
-                                        {card.desc}
-                                      </p>
+                            {/* Section Info */}
+                            <div className={`lg:col-span-1 ${isLeft ? "lg:pr-20" : "lg:order-2 lg:pl-20"}`}>
+                              <div className={`flex flex-col ${isLeft ? "lg:items-end" : "lg:items-start"}`}>
+                                {/* Mobile Marker */}
+                                <div className="flex items-center gap-3 mb-4 lg:hidden">
+                                  <span className="flex h-8 w-8 items-center justify-center rounded bg-emerald-900/5 border border-emerald-500/30 text-emerald-400 font-mono text-sm font-bold">
+                                    0{phase.marker}
+                                  </span>
+                                  <span className="h-px flex-1 bg-gradient-to-r from-emerald-500/30 to-transparent"></span>
+                                </div>
+
+                                <h3 className="text-2xl font-bold text-white drop-shadow-sm md:text-3xl">{phase.title}</h3>
+                                
+                                <div className={`mt-3 inline-flex items-center gap-2 rounded-full border border-white/5 bg-white/5 px-4 py-1.5 backdrop-blur-md ${isLeft ? "flex-row" : "flex-row-reverse"}`}>
+                                  <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-amber-400" />
+                                  <p className="text-xs font-medium uppercase tracking-wide text-slate-300">{phase.subtitle}</p>
+                                </div>
+
+                                {phase.target && (
+                                  <div className="mt-6 border-l-2 border-emerald-500/40 bg-gradient-to-r from-emerald-900/10 to-transparent py-2 pl-4">
+                                    <p className="font-mono text-sm text-emerald-400">{`>>> TARGET: ${phase.target}`}</p>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+
+                            {/* Cards Grid */}
+                            <div className={`lg:col-span-1 ${isLeft ? "lg:order-2 lg:pl-20" : "lg:pr-20"}`}>
+                              <div className="grid gap-3 sm:grid-cols-2">
+                                {phase.cards.map((card, cIdx) => (
+                                  <div
+                                    key={cIdx}
+                                    className="group relative overflow-hidden rounded-xl border border-white/5 bg-[linear-gradient(90deg,#000000,#78560e)] p-4 transition-all duration-300 hover:border-emerald-500/30 hover:bg-slate-800/60"
+                                  >
+                                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    <div className="relative z-10">
+                                      <div className="flex items-start justify-between">
+                                        <p className="text-sm font-bold text-slate-100 group-hover:text-emerald-300 transition-colors duration-300">
+                                          {card.title}
+                                        </p>
+                                        <div className="mt-1 h-1 w-1 rounded-full bg-slate-600 group-hover:bg-emerald-400 transition-colors duration-300" />
+                                      </div>
+                                      <p className="mt-2 text-xs text-slate-400 group-hover:text-slate-300">{card.desc}</p>
                                     </div>
-                                  ))}
-                                </div>
+                                  </div>
+                                ))}
                               </div>
-                            </div>
-
-                            <div className={`absolute inset-y-0 hidden items-center lg:flex ${isLeft ? "lg:left-1/2 lg:-translate-x-1/2" : "lg:left-1/2 lg:-translate-x-1/2"}`}>
-                              <div className="h-full w-px bg-[#d4a34a]/25" />
                             </div>
                           </div>
                         </AnimatedCard>
@@ -378,80 +459,114 @@ export default function Home() {
                     })}
                   </div>
 
-                  <div className="mt-12 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-                    <div className="rounded-2xl border border-[#d4a34a]/45 bg-black/20 p-5 shadow-[0_10px_32px_rgba(0,0,0,0.35)]">
-                      <p className="text-sm font-semibold uppercase tracking-[0.22em] text-amber-100">Decision Node</p>
-                      <h4 className="mt-2 text-lg font-semibold text-emerald-100">2026 Target Evaluation</h4>
-                      <p className="mt-2 text-sm text-slate-200">Is the Rp1B AUM target reached?</p>
-                      <div className="mt-4 flex flex-wrap gap-3 text-xs font-semibold">
-                        <span className="rounded-full border border-emerald-400/60 bg-emerald-400/15 px-3 py-2 text-emerald-100">YES: Continue strategy + AUM growth plan</span>
-                        <span className="rounded-full border border-amber-400/60 bg-amber-400/15 px-3 py-2 text-amber-100">NO: Adjust trading parameters</span>
+                  {/* Futuristic Decision Node & Roadmap */}
+                  <div className="mt-32 rounded-3xl border border-white/5 bg-[linear-gradient(90deg,#000000,#16145a)] backdrop-blur-xl p-6 sm:p-10 relative overflow-hidden">
+                    {/* Decorative Background Elements */}
+                    <div className="absolute right-0 top-0 -mr-20 -mt-20 h-64 w-64 rounded-full bg-emerald-500/5 blur-3xl" />
+                    <div className="absolute bottom-0 left-0 -ml-20 -mb-20 h-64 w-64 rounded-full bg-amber-900/5 blur-3xl" />
+                    
+                    <div className="relative z-10 grid gap-12 lg:grid-cols-2">
+                      <div className="space-y-8">
+                        <div>
+                          <span className="mb-3 block font-mono text-xs font-bold uppercase tracking-[0.3em] text-amber-400">
+                            Decision Node
+                          </span>
+                          <h4 className="text-3xl font-bold text-white sm:text-4xl">2026 Target Evaluation</h4>
+                        </div>
+                        <p className="text-lg leading-relaxed text-slate-300">
+                          Continuous assessment of our Rp1B AUM milestone. The system automatically routes to expansion or optimization protocols based on real-time performance metrics.
+                        </p>
+                        
+                        <div className="flex flex-col sm:flex-row gap-4">
+                          <div className="flex-1 rounded-xl border border-emerald-500/20 bg-emerald-900/5 p-5 text-center transition hover:bg-emerald-500/20">
+                            <p className="mb-1 text-xs font-bold uppercase tracking-widest text-emerald-400">Success Protocol</p>
+                            <p className="text-lg font-bold text-white">Scale to Rp10B</p>
+                          </div>
+                          <div className="flex-1 rounded-xl border border-amber-500/20 bg-amber-500/10 p-5 text-center transition hover:bg-amber-500/20">
+                            <p className="mb-1 text-xs font-bold uppercase tracking-widest text-amber-400">Re-Optimize</p>
+                            <p className="text-lg font-bold text-white">Adjust Parameters</p>
+                          </div>
+                        </div>
                       </div>
-                    </div>
 
-                    <div className="rounded-2xl border border-[#d4a34a]/45 bg-black/20 p-5 shadow-[0_10px_32px_rgba(0,0,0,0.35)]">
-                      <p className="text-sm font-semibold uppercase tracking-[0.22em] text-amber-100">Long-term Roadmap</p>
-                      <div className="mt-4 grid gap-4 sm:grid-cols-3 text-center text-sm text-slate-200">
-                        <div className="rounded-xl border border-[#d4a34a]/35 bg-black/25 px-3 py-3">
-                          <p className="text-lg font-semibold text-emerald-100">2025</p>
-                          <p>Operate at Rp1B AUM</p>
-                        </div>
-                        <div className="rounded-xl border border-[#d4a34a]/35 bg-black/25 px-3 py-3">
-                          <p className="text-lg font-semibold text-emerald-100">2026</p>
-                          <p>Scale to Rp10B</p>
-                        </div>
-                        <div className="rounded-xl border border-[#d4a34a]/35 bg-black/25 px-3 py-3">
-                          <p className="text-lg font-semibold text-emerald-100">2027</p>
-                          <p>Strategy revision for expansion</p>
-                        </div>
+                      <div className="lg:border-l lg:border-white/10 lg:pl-12 space-y-8">
+                         <div>
+                            <span className="mb-3 block font-mono text-xs font-bold uppercase tracking-[0.3em] text-slate-500">
+                                Strategic Timeline
+                            </span>
+                            <h4 className="text-xl font-bold text-white">Future Roadmap</h4>
+                         </div>
+                         
+                         <div className="space-y-6">
+                            {[
+                                { year: '2025', title: 'System Stabilization', desc: 'Full operation at Rp1B AUM', status: 'active' },
+                                { year: '2026', title: 'Scaling Phase 1', desc: 'Target Rp10B deployment & new markets', status: 'pending' },
+                                { year: '2027', title: 'Global Expansion', desc: 'Multi-asset framework implementation', status: 'future' }
+                            ].map((item, i) => (
+                                <div key={i} className="group flex gap-4">
+                                     <div className={`mt-1 font-mono text-sm font-bold ${item.status === 'active' ? 'text-emerald-400' : 'text-slate-600'}`}>{item.year}</div>
+                                     <div className="relative flex-1 pb-6 border-l border-white/5 pl-6 last:pb-0 last:border-0">
+                                        <div className={`absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full border-2 border-slate-900 ${item.status === 'active' ? 'bg-emerald-400' : 'bg-slate-700'}`} />
+                                        <h5 className={`font-semibold ${item.status === 'active' ? 'text-white' : 'text-slate-400'}`}>{item.title}</h5>
+                                        <p className="text-sm text-slate-500 mt-1">{item.desc}</p>
+                                     </div>
+                                </div>
+                            ))}
+                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </AnimatedContainer>
             </section>
 
             <section className="relative pl-6 lg:pl-16">
-              <AnimatedContainer>
-                <div className="rounded-3xl border border-white/5 bg-slate-900/60 p-8 sm:p-10">
-                  <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-                    <div className="space-y-3">
-                      <p className="text-xs uppercase tracking-[0.3em] text-slate-300">Trading Playbook</p>
-                      <h3 className="text-2xl font-semibold">Quant signals + discretionary validation</h3>
-                      <p className="max-w-3xl text-slate-200">
-                        Altcoins Scanner, Derivatives Trading, and Technical sleeves feed into the Trading Desk. Signals are either auto-executed within risk limits or validated by the discretionary desk. Monthly performance reviews decide whether to continue the strategy, adjust parameters, or optimize models.
+                <div className="relative p-10">
+                  <div className="relative z-10 flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
+                    <div className="space-y-6 lg:max-w-2xl">
+                      <div>
+                          <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-emerald-400">System Playbook</p>
+                          <h3 className="text-3xl font-bold text-white sm:text-4xl">Quant Signals + Discretionary Validation</h3>
+                      </div>
+                      <p className="text-lg leading-relaxed text-slate-300">
+                        Our hybrid approach combines machine-speed execution via CVQuant with human oversight. Signals are filtered through rigorous risk models before execution, ensuring every trade aligns with our capital preservation mandates.
                       </p>
-                      <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                        {["Altcoins Scanner", "Derivatives Trading", "Onchain / Technical", "Model Optimization"].map((item) => (
-                          <div key={item} className="rounded-2xl border border-white/10 bg-slate-900/60 p-4 text-sm font-semibold text-emerald-100">
+                      
+                      <div className="flex flex-wrap gap-3">
+                        {["Altcoins Scanner", "Derivatives Trading", "Onchain Analytics", "Risk Models"].map((item) => (
+                          <span key={item} className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold text-emerald-300 backdrop-blur-sm">
                             {item}
-                          </div>
+                          </span>
                         ))}
                       </div>
                     </div>
-                    <div className="flex flex-col gap-3">
+
+                    <div className="flex flex-col gap-4 w-full lg:w-auto">
                       <a
-                        className="rounded-full bg-gradient-to-r from-emerald-400 to-teal-300 px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-emerald-500/30 transition hover:scale-[1.01]"
+                        className="group flex items-center justify-center gap-2 rounded-full bg-emerald-500 px-8 py-4 text-sm font-bold text-slate-950 shadow-lg shadow-emerald-500/20 transition-all hover:bg-emerald-400 hover:scale-105"
                         href="mailto:panogaricapital@gmail.com"
                       >
-                        Contact Panogari Capital
+                        Available for Partners
+                        <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
                       </a>
-                      <a
-                        className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-emerald-300/70 hover:text-emerald-100"
-                        href="mailto:panogaricapital@gmail.com?subject=Governance%20Overview%20Request"
-                      >
-                        Request governance overview
-                      </a>
-                      <Link
-                        className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-emerald-300/70 hover:text-emerald-100"
-                        href="/contact"
-                      >
-                        Contact page
-                      </Link>
+                      <div className="flex flex-col gap-2 sm:flex-row">
+                          <a
+                            className="flex-1 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-white/10"
+                            href="mailto:panogaricapital@gmail.com?subject=Governance%20Overview%20Request"
+                          >
+                            Request Governance
+                          </a>
+                          <Link
+                            className="flex-1 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-white/10"
+                            href="/contact"
+                          >
+                            Contact Page
+                          </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </AnimatedContainer>
             </section>
           </div>
         </div>
