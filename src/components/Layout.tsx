@@ -75,11 +75,11 @@ export function Layout({ children }: { children: ReactNode }) {
 
         {/* Mobile Menu Overlay */}
         <div
-          className={`fixed inset-0 z-40 flex flex-col items-center justify-center bg-black/95 backdrop-blur-3xl transition-all duration-500 md:hidden ${
+          className={`fixed inset-0 z-40 flex flex-col justify-center bg-black transition-all duration-300 md:hidden ${
             isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
           }`}
         >
-          <div className="flex flex-col items-center gap-8">
+          <div className="flex flex-col items-center gap-8 px-6">
              {navItems.map((item) => {
                const active = isActive(router.pathname, item.href);
                return (
@@ -87,20 +87,29 @@ export function Layout({ children }: { children: ReactNode }) {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`text-2xl font-light tracking-widest transition-all ${
-                    active ? "text-emerald-400 font-normal scale-110" : "text-slate-300 hover:text-white"
+                  className={`relative text-3xl font-light tracking-[0.15em] transition-all duration-300 ${
+                    active 
+                      ? "text-emerald-400 font-normal scale-105" 
+                      : "text-slate-400 hover:text-white"
                   }`}
                 >
                   {item.label}
+                  {active && (
+                    <span className="absolute -bottom-2 left-1/2 h-0.5 w-12 -translate-x-1/2 bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></span>
+                  )}
                 </Link>
                );
              })}
+             
+             <div className="h-8"></div> {/* Spacer */}
+
              <Link
                href="/roadmap"
                onClick={() => setIsMobileMenuOpen(false)}
-               className="mt-4 rounded-full bg-emerald-500 px-8 py-3 text-sm font-bold tracking-widest text-black shadow-xl shadow-emerald-500/20"
+               className="group relative flex items-center gap-3 rounded-full border border-emerald-500/30 bg-emerald-900/10 px-8 py-3 transition-colors hover:bg-emerald-500/20"
              >
-               ROADMAP
+               <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+               <span className="text-sm font-bold tracking-[0.2em] text-emerald-400 group-hover:text-emerald-300">ROADMAP</span>
              </Link>
           </div>
         </div>
