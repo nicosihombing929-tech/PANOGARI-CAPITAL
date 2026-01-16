@@ -73,44 +73,57 @@ export function Layout({ children }: { children: ReactNode }) {
           </button>
         </div>
 
-        {/* Mobile Menu Overlay */}
+        {/* Mobile Menu Overlay (Backdrop) */}
         <div
-          className={`fixed inset-0 z-40 flex flex-col bg-black/95 pt-28 backdrop-blur-3xl transition-all duration-300 md:hidden ${
+          className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 md:hidden ${
             isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
           }`}
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+
+        {/* Mobile Menu Drawer */}
+        <div
+          className={`fixed left-0 top-0 z-50 flex h-full w-72 flex-col bg-slate-950 shadow-2xl transition-transform duration-300 md:hidden ${
+            isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
         >
-          <nav className="flex w-full flex-col gap-2 px-6">
-             {navItems.map((item) => {
-               const active = isActive(router.pathname, item.href);
-               return (
+          {/* Menu Header */}
+          <div className="border-b border-white/10 px-6 py-6">
+            <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Navigation</p>
+          </div>
+
+          {/* Menu Items */}
+          <nav className="flex-1 overflow-y-auto px-0 py-4">
+            {navItems.map((item) => {
+              const active = isActive(router.pathname, item.href);
+              return (
                 <Link
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`flex w-full items-center justify-between border-b border-white/5 pb-4 pt-2 text-lg font-medium transition-colors ${
-                    active 
-                      ? "text-emerald-400" 
-                      : "text-slate-100 hover:text-emerald-300"
+                  className={`flex items-center border-l-4 px-6 py-5 text-base font-medium transition-colors duration-200 ${
+                    active
+                      ? "border-emerald-500 bg-emerald-500/10 text-emerald-400"
+                      : "border-transparent text-slate-300 hover:bg-white/5 hover:text-white"
                   }`}
                 >
                   <span>{item.label}</span>
-                  {active && (
-                    <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
-                  )}
                 </Link>
-               );
-             })}
-             
-             <div className="mt-8">
-               <Link
-                 href="/roadmap"
-                 onClick={() => setIsMobileMenuOpen(false)}
-                 className="flex w-full items-center justify-center rounded-full bg-gradient-to-r from-emerald-600 to-teal-500 px-5 py-4 text-sm font-bold uppercase tracking-widest text-white shadow-lg shadow-emerald-500/20 transition-transform active:scale-[0.98]"
-               >
-                 View Roadmap
-               </Link>
-             </div>
+              );
+            })}
           </nav>
+
+          {/* Menu Footer / Roadmap Button */}
+          <div className="border-t border-white/10 p-6">
+            <Link
+              href="/roadmap"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-emerald-600 to-teal-500 px-4 py-3.5 text-sm font-bold uppercase tracking-widest text-white shadow-lg shadow-emerald-500/20 transition-transform active:scale-95"
+            >
+              Roadmap
+            </Link>
+            <p className="mt-6 text-center text-xs text-slate-500">© 2026 Panogari Capital</p>
+          </div>
         </div>
       </div>
 
