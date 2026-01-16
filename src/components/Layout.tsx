@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { ReactNode, useState } from "react";
+import { Home, Users, Briefcase, Mail, Map, X, ChevronRight } from "lucide-react";
 
 const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "Home", icon: Home },
+  { href: "/about", label: "About", icon: Users },
+  { href: "/services", label: "Services", icon: Briefcase },
+  { href: "/contact", label: "Contact", icon: Mail },
 ];
 
 function isActive(pathname: string, href: string) {
@@ -73,56 +74,77 @@ export function Layout({ children }: { children: ReactNode }) {
           </button>
         </div>
 
-        {/* Mobile Menu Overlay (Backdrop) */}
-        <div
-          className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 md:hidden ${
-            isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
-          }`}
+        {/* Mobile Sidebar Overlay & Drawer */}
+        <div 
+          className={`fixed inset-0 z-40 bg-black/60 backdrop-blur-sm transition-opacity duration-300 md:hidden ${isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`} 
           onClick={() => setIsMobileMenuOpen(false)}
         />
-
-        {/* Mobile Menu Drawer */}
+        
         <div
-          className={`fixed left-0 top-0 z-50 flex h-full w-72 flex-col bg-slate-950 shadow-2xl transition-transform duration-300 md:hidden ${
+          className={`fixed inset-y-0 left-0 z-50 w-72 transform bg-[#1a1a1a] shadow-2xl transition-transform duration-300 ease-in-out md:hidden ${
             isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
-          {/* Menu Header */}
-          <div className="border-b border-white/10 px-6 py-6">
-            <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Navigation</p>
+          <div className="flex h-16 items-center justify-between border-b border-white/5 px-6">
+             <span className="text-sm font-bold tracking-[0.2em] text-emerald-400">MENU</span>
+             <button 
+                onClick={() => setIsMobileMenuOpen(false)} 
+                className="rounded-full p-2 text-slate-400 transition-colors hover:bg-white/5 hover:text-white"
+             >
+               <X className="h-5 w-5" />
+             </button>
           </div>
-
-          {/* Menu Items */}
-          <nav className="flex-1 overflow-y-auto px-0 py-4">
-            {navItems.map((item) => {
-              const active = isActive(router.pathname, item.href);
-              return (
+          
+          <nav className="flex flex-col gap-1 p-4">
+             {navItems.map((item) => {
+               const active = isActive(router.pathname, item.href);
+               const Icon = item.icon;
+               return (
                 <Link
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`flex items-center border-l-4 px-6 py-5 text-base font-medium transition-colors duration-200 ${
-                    active
-                      ? "border-emerald-500 bg-emerald-500/10 text-emerald-400"
-                      : "border-transparent text-slate-300 hover:bg-white/5 hover:text-white"
+                  className={`group flex items-center gap-4 rounded-lg px-4 py-3 text-sm font-medium transition-all ${
+                    active 
+                      ? "bg-emerald-900/20 text-emerald-400 border-l-2 border-emerald-500" 
+                      : "text-slate-300 border-l-2 border-transparent hover:bg-white/5 hover:text-white"
                   }`}
                 >
+                  <Icon className={`h-5 w-5 ${active ? "text-emerald-400" : "text-slate-400 group-hover:text-white"}`} />
                   <span>{item.label}</span>
                 </Link>
-              );
-            })}
+               );
+             })}
+             
+             <div className="my-2 h-px w-full bg-white/5" />
+
+             <Link
+               href="/roadmap"
+               onClick={() => setIsMobileMenuOpen(false)}
+               className="group flex items-center gap-4 rounded-lg px-4 py-3 text-sm font-medium text-slate-300 border-l-2 border-transparent hover:bg-white/5 hover:text-white"
+             >
+                <Map className="h-5 w-5 text-emerald-500" />
+                <span>Roadmap</span>
+                <ChevronRight className="ml-auto h-4 w-4 text-slate-600 transition-transform group-hover:translate-x-1 group-hover:text-emerald-400" />
+             </Link>
           </nav>
 
-          {/* Menu Footer / Roadmap Button */}
-          <div className="border-t border-white/10 p-6">
-            <Link
-              href="/roadmap"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-emerald-600 to-teal-500 px-4 py-3.5 text-sm font-bold uppercase tracking-widest text-white shadow-lg shadow-emerald-500/20 transition-transform active:scale-95"
-            >
-              Roadmap
-            </Link>
-            <p className="mt-6 text-center text-xs text-slate-500">© 2026 Panogari Capital</p>
+          {/* Footer User Profile Style */}
+          <div className="absolute bottom-6 left-0 w-full px-4">
+             <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/5 p-4 backdrop-blur-sm">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-700 text-xs font-bold text-white shadow-lg">
+                  PC
+                </div>
+                <div>
+                   <p className="text-xs font-bold text-white uppercase tracking-wider">Panogari Capital</p>
+                   <p className="text-[10px] text-slate-400">Family Office Systems</p>
+                </div>
+             </div>
+             
+             <div className="mt-4 flex items-center justify-center gap-2 text-[10px] text-slate-600">
+                <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span>System Operational</span>
+             </div>
           </div>
         </div>
       </div>
