@@ -52,6 +52,51 @@ const pillars = [
   },
 ];
 
+const investors = [
+  { 
+    name: "Nico Panogari Sihombing", 
+    role: "Chairman, CEO & Founder", 
+    image: "/investors/nico-panogari.png",
+    description: "Founder and visionary behind Panogari Capital, driving the strategic roadmap, governance framework, and the CVQuant trading systems." 
+  },
+  { 
+    name: "R. Sihombing", 
+    role: "Investor", 
+    image: "/investors/investor-1.png",
+    description: "Specializes in algorithmic trading strategies and quantitative risk assessment, bringing 10+ years of market experience." 
+  },
+  { 
+    name: "R. Tampubolon", 
+    role: "Investor", 
+    image: "/investors/investor-2.png",
+    description: "Focuses on long-term asset allocation and wealth preservation, ensuring alignment with family legacy goals." 
+  },
+  { 
+    name: "Afrinaldi Sihombing", 
+    role: "Investor", 
+    image: "/investors/investor-3.png",
+    description: "Oversees operational governance and compliance frameworks, maintaining institutional-grade standards." 
+  },
+  { 
+    name: "Evlin Sarah Sihombing", 
+    role: "Investor", 
+    image: "/investors/investor-4.png",
+    description: "Expert in alternative investments and venture capital, identifying high-growth opportunities in emerging markets." 
+  },
+  { 
+    name: "Luis Fabiano Sihombing", 
+    role: "Investor", 
+    image: "/investors/investor-5.png",
+    description: "Leads the real estate and physical asset portfolio, balancing liquidity with stable, long-term appreciation." 
+  },
+  { 
+    name: "Diva Olivia Sihombing", 
+    role: "Investor", 
+    image: "/investors/investor-6.png",
+    description: "Manages philanthropic initiatives and impact investing, integrating social responsibility with financial returns." 
+  },
+];
+
 export default function About() {
   return (
     <>
@@ -130,6 +175,84 @@ export default function About() {
                     </AnimatedCard>
                    ))}
                 </div>
+             </div>
+          </section>
+
+          {/* Investment Team / Family Members Section */}
+          <section className="relative">
+             <div className="mb-16">
+                <p className="text-sm font-bold uppercase tracking-[0.3em] text-emerald-500">Investment Family</p>
+                <h2 className="mt-4 text-3xl font-bold text-white">Our Stakeholders</h2>
+                <p className="mt-3 text-slate-300 max-w-2xl">United by vision, aligned on capital allocation and long-term wealth preservation for the family office.</p>
+             </div>
+
+             <div className="space-y-16">
+                 {/* Chairman - Tier 1 */}
+                 <div className="mx-auto max-w-5xl mb-20">
+                   {investors.slice(0, 1).map((leader) => (
+                      <AnimatedCard key={leader.name} delay={0}>
+                         <div className="group relative">
+                            <div className="grid md:grid-cols-2 gap-10 items-center">
+                               <div className="relative h-[400px] md:h-[500px] w-full">
+                                     <img 
+                                       src={leader.image} 
+                                       alt={leader.name}
+                                       className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105"
+                                     />
+                                     {/* Removed gradient overlay for cleaner look if requested */}
+                               </div>
+                               <div className="flex flex-col justify-center relative">
+                                  <div className="mb-6 opacity-20">
+                                     <svg className="w-16 h-16 text-amber-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/></svg>
+                                  </div>
+                                  <span className="mb-4 inline-block w-fit rounded bg-amber-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-amber-500 border border-amber-500/20">
+                                     {leader.role}
+                                  </span>
+                                  <h3 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">{leader.name}</h3>
+                                  <p className="text-slate-300 leading-relaxed text-lg max-w-lg">{leader.description}</p>
+                                  
+                                  <div className="mt-8 flex gap-4">
+                                     <div className="h-1 w-24 bg-gradient-to-r from-amber-500 to-transparent rounded-full" />
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </AnimatedCard>
+                   ))}
+                 </div>
+
+                 {/* Investors - Tier 2 (Staggered Grid) */}
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 px-2">
+                    {investors.slice(1).map((investor, idx) => (
+                       <AnimatedCard key={investor.name} delay={idx * 0.1}>
+                          <div className={`group relative h-[380px] w-full ${idx % 2 !== 0 ? "md:mt-16" : ""}`}>
+                               <img 
+                                 src={investor.image}
+                                 alt={investor.name}
+                                 className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105"
+                               />
+                               
+                               {/* Name Top Right */}
+                               <div className="absolute top-6 right-6 z-20 text-right drop-shadow-lg">
+                                  <h3 className="text-2xl font-bold text-white tracking-wide">{investor.name}</h3>
+                               </div>
+
+                               {/* Hover Description & Role - Moving "Investor" text inside as requested previously */}
+                               <div className="absolute inset-0 flex flex-col justify-end p-8 translate-y-8 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 z-30">
+                                  <div className="p-4 rounded-xl backdrop-blur-sm bg-black/40">
+                                    <p className="text-emerald-400 font-bold uppercase tracking-widest text-xs mb-2">Investor</p>
+                                    <p className="text-slate-200 leading-relaxed text-sm">
+                                      {investor.description}
+                                    </p>
+                                  </div>
+                               </div>
+                          </div>
+                          
+                          {/* Bottom Accent Line (External) */}
+                          <div className={`mt-4 h-0.5 bg-emerald-500/50 w-0 transition-all duration-500 group-hover:w-full ${idx % 2 !== 0 ? "" : ""}`} />
+                       </AnimatedCard>
+                    ))}
+                 </div>
              </div>
           </section>
 

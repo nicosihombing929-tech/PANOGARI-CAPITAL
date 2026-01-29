@@ -145,11 +145,11 @@ const RoadmapFuturistic: React.FC = () => {
                 transition={{ delay: idx * 0.2 }}
                 className={`relative flex flex-col lg:flex-row items-start lg:items-center mb-16 lg:mb-32 ${idx % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}
               >
-                <div className={`w-full lg:w-1/2 pl-12 lg:pl-0 ${idx % 2 === 0 ? "lg:pr-16" : "lg:pl-16"}`}>
+                <div className={`w-full lg:w-1/2 pl-16 lg:pl-0 ${idx % 2 === 0 ? "lg:pr-16" : "lg:pl-16"}`}>
                   <motion.div whileHover={{ scale: 1.02 }} className="relative p-0">
                     <div className="relative py-4">
-                      <div className="flex items-center justify-between mb-6">
-                        <div className="flex items-center gap-4">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
+                        <div className="flex items-start sm:items-center gap-4">
                           <div className={`p-3 rounded-xl bg-gradient-to-br ${phase.gradient}`}>{phase.icon}</div>
                           <div>
                             <div className="text-sm font-semibold text-gray-400">{phase.timeline}</div>
@@ -194,7 +194,7 @@ const RoadmapFuturistic: React.FC = () => {
                   </motion.div>
                 </div>
 
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 flex items-center justify-center">
+                <div className="absolute left-4 lg:left-1/2 transform -translate-x-1/2 w-12 h-12 flex items-center justify-center top-4 lg:top-auto">
                   <div
                     className={`absolute w-6 h-6 rounded-full bg-gradient-to-br ${phase.gradient} ${activePhase === idx ? "animate-pulse" : ""}`}
                   />
@@ -271,12 +271,12 @@ const RoadmapFuturistic: React.FC = () => {
           <div className="mt-32">
             <div className="p-0">
               <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
-                <div>
+                <div className="text-center lg:text-left">
                   <h3 className="text-2xl font-bold mb-2">Roadmap Progress</h3>
                   <p className="text-gray-400">Real-time tracking of development milestones</p>
                 </div>
 
-                <div className="flex items-center gap-8">
+                <div className="flex flex-wrap justify-center gap-8">
                   {phases.map((phase, idx) => (
                     <div key={idx} className="text-center">
                       <div
