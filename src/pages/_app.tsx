@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { Playfair_Display, Space_Grotesk } from "next/font/google";
 import { Layout } from "@/components/Layout";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const display = Playfair_Display({
   subsets: ["latin"],
@@ -16,9 +17,11 @@ const sans = Space_Grotesk({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className={`${display.variable} ${sans.variable}`}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <LanguageProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </LanguageProvider>
     </div>
   );
 }
