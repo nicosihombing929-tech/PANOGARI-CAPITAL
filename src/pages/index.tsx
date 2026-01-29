@@ -173,8 +173,8 @@ export default function Home() {
                   </div>
                   
                   <h1 className="text-4xl xs:text-5xl font-bold leading-[0.95] tracking-tight text-white md:text-7xl lg:text-[5.5rem]">
-                    <span className="block font-serif font-medium italic text-slate-200 lg:text-[6.5rem] tracking-wide text-5xl sm:text-7xl">Panogari</span>
-                    <span className="block mt-2 tracking-[0.15em] sm:tracking-[0.3em] font-sans font-light text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 text-3xl xs:text-4xl sm:text-5xl lg:text-[5.5rem] break-words">
+                    <span className="block font-serif font-medium italic text-slate-200 lg:text-[6.5rem] tracking-wide text-4xl xs:text-5xl sm:text-7xl">Panogari</span>
+                    <span className="block mt-2 tracking-[0.15em] sm:tracking-[0.3em] font-sans font-light text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 text-2xl xs:text-3xl sm:text-5xl lg:text-[5.5rem] break-words">
                       CAPITAL
                     </span>
                   </h1>

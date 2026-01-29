@@ -91,7 +91,7 @@ const RoadmapFuturistic: React.FC = () => {
                   </div>
                 </div>
                 <div>
-                  <h1 className="text-3xl sm:text-4xl xs:text-5xl lg:text-6xl font-bold tracking-tight">
+                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
                     <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">PANOGARI</span>
                     <span className="text-white"> CAPITAL</span>
                   </h1>
@@ -99,11 +99,11 @@ const RoadmapFuturistic: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="px-4 py-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 rounded-full">
-                  <span className="text-sm font-semibold">AUM Target: RP1B to RP10B</span>
+              <div className="flex flex-wrap items-center gap-4">
+                <div className="px-4 py-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 rounded-full max-w-full">
+                  <span className="text-sm font-semibold break-words">AUM Target: RP1B to RP10B</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 flex-shrink-0">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
                   <span className="text-sm text-gray-400">Active Development</span>
                 </div>
@@ -140,15 +140,15 @@ const RoadmapFuturistic: React.FC = () => {
             {phases.map((phase, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
+                initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: idx * 0.2 }}
                 className={`relative flex flex-col lg:flex-row items-start lg:items-center mb-16 lg:mb-32 ${idx % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}
               >
-                <div className={`w-full lg:w-1/2 pl-16 lg:pl-0 ${idx % 2 === 0 ? "lg:pr-16" : "lg:pl-16"}`}>
-                  <motion.div whileHover={{ scale: 1.02 }} className="relative p-0">
+                <div className={`w-full lg:w-1/2 pl-14 lg:pl-0 ${idx % 2 === 0 ? "lg:pr-16" : "lg:pl-16"}`}>
+                  <motion.div whileHover={{ scale: 1.01 }} className="relative p-0">
                     <div className="relative py-4">
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
+                      <div className="flex flex-col-reverse sm:flex-row sm:items-center justify-between mb-6 gap-4">
                         <div className="flex items-start sm:items-center gap-4">
                           <div className={`p-3 rounded-xl bg-gradient-to-br ${phase.gradient}`}>{phase.icon}</div>
                           <div>

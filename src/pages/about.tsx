@@ -225,31 +225,33 @@ export default function About() {
                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 px-2">
                     {investors.slice(1).map((investor, idx) => (
                        <AnimatedCard key={investor.name} delay={idx * 0.1}>
-                          <div className={`group relative h-[380px] w-full ${idx % 2 !== 0 ? "md:mt-16" : ""}`}>
-                               <img 
-                                 src={investor.image}
-                                 alt={investor.name}
-                                 className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105"
-                               />
-                               
-                               {/* Name Top Right */}
-                               <div className="absolute top-6 right-6 z-20 text-right drop-shadow-lg">
-                                  <h3 className="text-2xl font-bold text-white tracking-wide">{investor.name}</h3>
-                               </div>
-
-                               {/* Hover Description & Role - Moving "Investor" text inside as requested previously */}
-                               <div className="absolute inset-0 flex flex-col justify-end p-8 translate-y-8 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 z-30">
-                                  <div className="p-4 rounded-xl backdrop-blur-sm bg-black/40">
-                                    <p className="text-emerald-400 font-bold uppercase tracking-widest text-xs mb-2">Investor</p>
-                                    <p className="text-slate-200 leading-relaxed text-sm">
-                                      {investor.description}
-                                    </p>
-                                  </div>
-                               </div>
+                          <div className={`group flex flex-col items-center ${idx % 2 !== 0 ? "md:mt-16" : ""}`}>
+                              <div className="relative w-full max-w-md mx-auto overflow-hidden rounded-2xl">
+                                   <img 
+                                     src={investor.image}
+                                     alt={investor.name}
+                                     className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                                   />
+    
+                                   {/* Hover Description & Role */}
+                                   <div className="absolute inset-0 flex flex-col justify-end p-6 translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 z-30 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                                      <div>
+                                        <p className="text-emerald-400 font-bold uppercase tracking-widest text-xs mb-2">Investor</p>
+                                        <p className="text-slate-200 leading-relaxed text-sm">
+                                          {investor.description}
+                                        </p>
+                                      </div>
+                                   </div>
+                              </div>
+                              
+                              {/* Name Below Image */}
+                              <div className="mt-6 text-center">
+                                 <h3 className="text-2xl font-bold text-white tracking-wide">{investor.name}</h3>
+                              </div>
+                              
+                              {/* Bottom Accent Line (External) */}
+                              <div className="mt-4 h-0.5 bg-emerald-500/50 w-0 transition-all duration-500 group-hover:w-24 group-hover:bg-emerald-400" />
                           </div>
-                          
-                          {/* Bottom Accent Line (External) */}
-                          <div className={`mt-4 h-0.5 bg-emerald-500/50 w-0 transition-all duration-500 group-hover:w-full ${idx % 2 !== 0 ? "" : ""}`} />
                        </AnimatedCard>
                     ))}
                  </div>
